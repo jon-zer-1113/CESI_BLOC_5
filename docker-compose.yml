@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  www:
+    image: videgrenierenligne
+    ports:
+      - "1337:80"
+    volumes:
+      - ./:/var/www/html
+    build:
+      context: .
+      dockerfile: Dockerfile
+    links:
+      - db
+
+  db:
+    image: mysql:latest
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    command:
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_general_ci"
+      - "--innodb_flush_log_at_trx_commit=1"
+      - "--sync_binlog=1"
+    restart: always    
+    environment:
+      MYSQL_USER: 'webapplication'
+      MYSQL_PASSWORD: '653rag9T'
+      MYSQL_DATABASE: 'videgrenierenligne'
+      MYSQL_ROOT_PASSWORD: 'azerty'
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+      
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    links: 
+    - db:db
+    restart: always
+    ports:
+      - 8081:80

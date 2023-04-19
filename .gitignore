@@ -1,0 +1,57 @@
+# # ignore les fichiers générés
+# *.log
+# *.out
+# *.swp
+# *.zip
+# *.tar.gz
+# *.tar.xz
+# *.tar.bz2
+
+# ignore les fichiers de configuration locaux de votre IDE
+.idea/
+
+# ignore les modules node.js et les dépendances
+node_modules/
+
+# ignore les dépendances Composer
+vendor/
+
+# # ignore les fichiers de logs
+# logs/
+
+# ignore les fichiers de cache
+.cache/
+
+# ignore les fichiers de sauvegarde
+*.backup
+
+# ignore les fichiers de configuration de serveur web
+nginx-configuration.txt
+
+# ignore les fichiers de verrouillage
+*.lock
+
+# # ignore les fichiers de compilation
+# dist/
+# build/
+# out/
+# target/
+
+# ignore les fichiers de configuration système
+.DS_Store
+Thumbs.db
+
+# ignore les fichiers de dépendances javascript
+package-lock.json
+
+# ignore les fichiers de dépendances de PHP
+composer.lock
+
+# ignore les fichiers de données
+*.data
+
+# ignore les fichiers de sauvegarde de bases de données
+*.bak
+
+# ignore les fichiers de cache
+*.cache
